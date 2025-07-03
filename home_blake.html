@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Top Rectangle</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Document</title>
+</html>
 <body>
-
-<div id="top-rectangle">
-    <!-- Content for your rectangle goes here (e.g., navigation, title) -->
-</div>
-
-<!-- Rest of your page content -->
-
+    <header>
+        <h1>Welcome People</h1>
+    </header>
+    <main>
+        <p>This is a paragraph in the main section of the document.</p>
+        <p>Here is another paragraph with some <strong>bold text</strong> and <em>italic text</em>.</p>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Simple HTML Document</p>
+    </footer>
+    <script>
+        console.log("This is a simple JavaScript log message.");
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Document is fully loaded and parsed.");
+        });
+        function showAlert() {
+            alert("This is an alert message!");
+        }
+        document.querySelector("header").addEventListener("click", showAlert);
+    </script>
 </body>
 </html>
