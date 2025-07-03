@@ -1,30 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simpe HTML Document</title>
-</html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>All About Georgia O'Keeffe</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+  <style>
+    /* @import url('./base.css'); */
+  </style>
+
 <body>
-    <header>
-        <h1>Welcome to My Simple HTML Document</h1>
-    </header>
-    <main>
-        <p>This is a paragraph in the main section of the document.</p>
-        <p>Here is another paragraph with some <strong>bold text</strong> and <em>italic text</em>.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 My Simple HTML Document</p>
-    </footer>
-    <script>
-        console.log("This is a simple JavaScript log message.");
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Document is fully loaded and parsed.");
-        });
-        function showAlert() {
-            alert("This is an alert message! ");
-        }
-        document.querySelector("header").addEventListener("click", showAlert);
-    </script>
+  <script src="script.js"></script>
+
+<!-- MAIN --> 
+  <section class="basic-grid">
+    <!-- {title} --> 
+    <div class="card name">
+      <h1>Georgia O'Keeffe</h1>
+    </div>
+
+    <!-- {artist} --> 
+    <div class="card personImg" style="background-image:url(georgia-okeeffe.jpg)"></div>
+
+    <!-- {brief} --> 
+    <div class="card text">
+      <p>She was born on November 15th, 1887 in Sun Prairie, Wisconsin. She died at the age of 98 on March 6th, 1986.</p>
+      <p>O’Keeffe was raised on a dairy farm in Wisconsin where she was taught about art at an early age. She was focused at a young age to become a  professional painter with her styles of imitative realism, but lost confidence in the dream as the styles of imitative realism weren't favorable. She became a teacher for most  of her life, where she shared the knowledge of art to others.  She later would go to Chicago to learn about and apply Asian culture in her art and soon emerged as a modernist when she traveled to South Carolina.</p>
+    </div>
+
+    <!-- {mural} --> 
+    <div class="card muralImg" style="background-image:url(process1.png)"></div> 
+
+    <!-- {art} --> 
+    <div class="card arthead">
+      <h2> Her Artwork</h2>
+    </div> 
+    <div class="card art" style="background-image:url(jimson.jpg)"></div>
+    <div class="card art" style="background-image:url(sky.jpg)"></div>
+    <div class="card art" style="background-image:url(red.jpg)"></div>
+
+       <!-- { more text} -->
+       <div class="card text2">
+            <p>Georgia O’Keeffe is known for her paintings of flowers, bones, and the built landscape unique to New York City and New Mexico. Her artwork followed Asian art styles as she kept her artwork clean and simple. Her paintings of flowers showed how the zoomed-in photographs of flowers were popular at the time. She would paint ovals  and spirals.
+</p>
+       </div>
+
+
+    <!-- {learn more} --> 
+    <div class="card museums">
+      <h3> Museums Containing Her Artwork:
+        <ul> <li>  <a href="https://www.okeeffemuseum.org"> Georgia O'Keeffe Museum of Art </a> </li>
+        <li> <a href="https://www.artic.edu/collection?artist_ids=Georgia+O%27Keeffe">Art Institvte Chicago </a> </li></ul></h3>
+    </div> 
+    <div class="card morehead">
+      <h2> See More of the Painted Mural </h2>
+    </div> 
+    <div class="card process1" style="background-image:url(process3.png)"></div> 
+    <div class="card process2" style="background-image:url(process2.png)"></div>
+    <div class="card More">
+      <h2> Check Out Other Artists Here: <br> <br>
+        Yayoi Kusama <br>
+        Frida Kahlo  <br>
+        Salvador Dali <br>
+        Faith Ringgold <br>
+        Pablo Picasso <br>
+        Vincent Van Gogh <br>
+        Jean-Michael Basquiat <br>
+        Jacob Lawrence <br>
+        Georgia O'Keeffe <br>
+        Homepage <br>
+      </h2>
+    </div>
+  </section>
+<!-- end of MAIN -->
+
 </body>
+
 </html>
