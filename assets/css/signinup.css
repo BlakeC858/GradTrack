@@ -1,0 +1,179 @@
+
+/* VARIABLES */
+:root {
+    --accent-color: #0d83fd;
+    --base-color: #ffffff;
+    --text-color: #212529;
+    --input-color: #eeefff;
+    --incorrect-color: #f06272;
+    --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+*{
+    /* keeps consistent for all browsers, applies to all elements */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* global/default font styling */
+    font-family: var(--default-font);
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+
+body {
+    /* background image */
+    min-height: 100vh;
+    background-image: url(../../backgroundSL.jpg);
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+}
+
+.wrapper {
+    /* white signup section */
+    box-sizing: border-box;
+    background-color: var(--base-color);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0px 20px 20px 0;
+
+    /* putting signup form in the middle of the screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+form {
+    /* separation between items + size */
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px; 
+    gap: 10px;
+
+    /* aligning form items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* div items directly within a form (direct child) */
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* label items anywhere within a form */
+form label {
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    border-radius: 10px 0px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0px 10px 10px 0px;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+
+form input:hover {
+    /* changes border if hovered */
+    border: 2px solid var(--accent-color);
+}
+
+form input:focus {
+    /* changes border of the input box if focused, takes out default outline */
+    outline: none;
+    border-color: var(--text-color);
+}
+
+/* gets the label of each div if it is focused */
+div:has(input:focus) > label {
+    background-color: var(--text-color);
+}
+
+/* gets text within the input boxes */
+form input::placeholder {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: 0.85em 4em;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+form button:hover {
+    background-color: var(--text-color);
+}
+
+form button:focus {
+    outline: none;
+    background-color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 1100px) {
+    .wrapper {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+
+/* INCORRECT FORMAT */
+form div.incorrect label {
+    background-color: var(--incorrect-color);
+}
+
+form div.incorrect input {
+    border-color: var(--incorrect-color);
+}
+
+#error_message {
+    color: var(--incorrect-color);
+}
+
