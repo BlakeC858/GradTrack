@@ -73,7 +73,7 @@ function getLoginFormErrors(email, password){
     return errors;
 }
 
-const allInputs = [firstname_input, email_input, password_input, repeat_password_input];
+const allInputs = [firstname, email, password, repeatPassword].filter(input => input != null);
 
 allInputs.forEach(input => {
     input.addEventListener("input", () => {
