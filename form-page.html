@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>High School Schedule Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f7f7f7;
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+    }
+    .checkbox-group {
+      margin-top: 10px;
+    }
+    .checkbox-group label {
+      display: block;
+      font-weight: normal;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Schedule Planner Form</h1>
+
+  <form id="plannerForm">
+
+    <!-- Career Goal -->
+    <label for="career">Career Goal:</label>
+    <select id="career" name="career">
+      <option value="">-- Select a Career --</option>
+      <option value="Software Engineer">Software Engineer</option>
+      <option value="Doctor">Doctor</option>
+      <option value="Artist">Artist</option>
+      <option value="Business">Business</option>
+      <option value="Other">Other</option>
+    </select>
+    <input type="text" id="customCareer" name="customCareer" placeholder="If Other, type your career goal" />
+
+    <!-- Grade -->
+    <label for="grade">Current Grade:</label>
+    <select id="grade" name="grade">
+      <option value="">-- Select Grade --</option>
+      <option value="9">9th Grade</option>
+      <option value="10">10th Grade</option>
+      <option value="11">11th Grade</option>
+      <option value="12">12th Grade</option>
+    </select>
+
+    <!-- Completed Courses -->
+    <label>Completed Courses:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="courses" value="Algebra 1" /> Algebra 1</label>
+      <label><input type="checkbox" name="courses" value="Geometry" /> Geometry</label>
+      <label><input type="checkbox" name="courses" value="Biology" /> Biology</label>
+      <label><input type="checkbox" name="courses" value="English 9" /> English 9</label>
+      <label><input type="checkbox" name="courses" value="PE" /> PE</label>
+    </div>
+
+    <!-- Elective Interests -->
+    <label>Elective Interests:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="electives" value="Art" /> Art</label>
+      <label><input type="checkbox" name="electives" value="Music" /> Music</label>
+      <label><input type="checkbox" name="electives" value="Business" /> Business</label>
+      <label><input type="checkbox" name="electives" value="Programming" /> Programming</label>
+    </div>
+
+    <button type="submit">Generate Schedule</button>
+  </form>
+
+  <script>
+    document.getElementById("plannerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const career = document.getElementById("career").value;
+      const customCareer = document.getElementById("customCareer").value;
+      const finalCareer = career === "Other" ? customCareer : career;
+
+      const grade = document.getElementById("grade").value;
+
+      const completedCourses = Array.from(document.querySelectorAll('input[name="courses"]:checked'))
+                                    .map(cb => cb.value);
+
+      const electives = Array.from(document.querySelectorAll('input[name="electives"]:checked'))
+                              .map(cb => cb.value);
+
+      // Log the data (this is where you'd send it to your algorithm/backend)
+      console.log({
+        careerGoal: finalCareer,
+        currentGrade: grade,
+        completedCourses,
+        electiveInterests: electives
+      });
+
+      // You can replace this alert with a function to display or generate the schedule
+      alert("Form submitted! Check the console for the collected data.");
+    });
+  </script>
+
+</body>
+</html>
